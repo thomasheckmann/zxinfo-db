@@ -25,6 +25,13 @@ docker exec -i zxdb mysql -uroot -p<my-secret-pwd> zxdb -e "select * from contro
 ````
 Where *my-secret-pw* is the password used above.
 
+# Running myPhpAdmin
+If you want to run myPhpAdmin with this Docker container, start the myPhpAdmin with:
+````
+docker run --name myadmin -d --link zxdb:db -p 8080:80 phpmyadmin/phpmyadmin
+````
+Now point your browser to http://localhost:8080/ and login with the credential used above.
+
 # External references
 * [mariaDB on Docker Hub](https://hub.docker.com/_/mariadb/)
 * [Using mariaDB via Docker](https://mariadb.com/kb/en/mariadb/installing-and-using-mariadb-via-docker/)
