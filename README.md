@@ -24,3 +24,7 @@ You can test the instance using (you might have to wait for data to be loaded)
 docker exec -i zxdb mysql -uroot -p<my-secret-pwd> zxdb -e "select * from controltypes;"
 ````
 Where *my-secret-pw* is the password used above.
+
+# External references
+* [mariaDB on Docker Hub](https://hub.docker.com/_/mariadb/)
+* [Using mariaDB via Docker](https://mariadb.com/kb/en/mariadb/installing-and-using-mariadb-via-docker/)
