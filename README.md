@@ -4,7 +4,7 @@ This is a quick-start guide for getting up and running with your own instance of
 ## Requirements
 You will need the following to get the container up and run:
 * Docker
-* ZXDB generic script, must be named ZXDB_latest_generic.sql from here [LINK]
+* ZXDB generic script, must be named ZXDB_latest_generic.sql from here [ZXDB](https://www.dropbox.com/sh/bgtoq6tdwropzzr/AAAuMt4OlA_RicOBgwQLopoMa/ZXDB?dl=0)
 
 # Installation
 Build the Docker image with
@@ -28,3 +28,4 @@ Where *my-secret-pw* is the password used above.
 # External references
 * [mariaDB on Docker Hub](https://hub.docker.com/_/mariadb/)
 * [Using mariaDB via Docker](https://mariadb.com/kb/en/mariadb/installing-and-using-mariadb-via-docker/)
+* [Database model ZXDB on WOS](https://www.worldofspectrum.org/forums/discussion/52951/database-model-zxdb/p1) (around page 23 can you find some sample SQL queries)
