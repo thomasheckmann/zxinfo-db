@@ -24,6 +24,8 @@ docker run --name zxdb -p 3306:3306 -v $PWD/mariadb:/var/lib/mysql -e MYSQL_ROOT
 Where *my-secret-pw* is the password to be set for the MySQL root user
 A docker container with the name *zxdb* should now be running on localhost port 3306.
 
+NOTE: If you updgrade with a new release of ZXDB, remember to remove the mariadb folder, as the script will only be run when MariaDB is initialized.
+
 You can test the instance using (you might have to wait for data to be loaded)
 ````
 docker exec -i zxdb mysql -uroot -p<my-secret-pwd> zxdb -e "select * from controltypes;"
