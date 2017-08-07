@@ -27,7 +27,7 @@ curl -XDELETE 'http://localhost:9200/_all'
 # Rebuild ES documents
 (a)
 ````
-node create-zxinfo-documents.js -all && (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
+node create-zxinfo-documents.js -all > zxscreens.txt && (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
 ````
 NEW WINDOW
 ````
@@ -39,6 +39,7 @@ node import-into-elastic.js data/processed/json/
 (cd UpdateScreens && ./getscreens.sh && php convert.php) && node update-new-screens.js UpdateScreens/json/
 ````
 COPY UpdateScreens/zxdb to HTMLROOT
+COPY UpdateScreens/zxscreens to HTMLROOT
 
 ## Update TOSEC refs
 ````
@@ -71,12 +72,17 @@ copy to HOST
 zxinfo-es - copy 
 ````
 UpdateScreens/zxdb to HOST/HTMLROOT
+UpdateScreens/zxscreens to HOST/HTMLROOT
 ````
 
-On HOST
+On HOST - zxinfo-es
 
 ````
 cd 'zxinfo-es'
+
+find data/processed/ -type f -name "*.json" -exec rm -rf {} \;
+find UpdateScreens/json/ -type f -name "*.json" -exec rm -rf {} \;
+
 tar zxvf data.tgz
 (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
 ````
