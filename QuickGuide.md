@@ -27,6 +27,8 @@ curl -XDELETE 'http://localhost:9200/_all'
 # Rebuild ES documents
 (a)
 ````
+# clean-up
+find data/processed/ -type f -name "*.json" -exec rm -rf {} \;
 node create-zxinfo-documents.js -all 2> zxscreens.txt && (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
 ````
 NEW WINDOW
@@ -36,6 +38,8 @@ node import-into-elastic.js data/processed/json/
 
 ## Update screens
 ````
+# clean-up
+find UpdateScreens/json/ -type f -name "*.json" -exec rm -rf {} \;
 (cd UpdateScreens && ./getscreens.sh && php convert.php) && node update-new-screens.js UpdateScreens/json/
 ````
 COPY UpdateScreens/zxdb to HTMLROOT
