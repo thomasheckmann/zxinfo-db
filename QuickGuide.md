@@ -27,7 +27,7 @@ curl -XDELETE 'http://localhost:9200/_all'
 # Rebuild ES documents
 (a)
 ````
-node create-zxinfo-documents.js -all > zxscreens.txt && (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
+node create-zxinfo-documents.js -all 2> zxscreens.txt && (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
 ````
 NEW WINDOW
 ````
