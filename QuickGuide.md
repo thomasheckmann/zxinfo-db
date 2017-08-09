@@ -39,6 +39,8 @@ node import-into-elastic.js data/processed/json/
 ## Update screens
 ````
 # clean-up
+[rm -r zxdb/sinclair/entries/*]
+[find ./UpdateScreens/zxscreens ! -path ./UpdateScreens/zxscreens -type d -exec rm -rf {} \;]
 find UpdateScreens/json/ -type f -name "*.json" -exec rm -rf {} \;
 (cd UpdateScreens && ./getscreens.sh && php convert.php) && node update-new-screens.js UpdateScreens/json/
 ````
