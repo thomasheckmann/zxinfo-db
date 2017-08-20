@@ -39,7 +39,7 @@ node import-into-elastic.js data/processed/json/
 ## Update screens
 ````
 # clean-up
-[rm -r zxdb/sinclair/entries/*]
+[rm -r ./UpdateScreens/zxdb/sinclair/entries/*]
 [find ./UpdateScreens/zxscreens ! -path ./UpdateScreens/zxscreens -type d -exec rm -rf {} \;]
 find UpdateScreens/json/ -type f -name "*.json" -exec rm -rf {} \;
 (cd UpdateScreens && ./getscreens.sh && php convert.php) && node update-new-screens.js UpdateScreens/json/
@@ -60,11 +60,17 @@ node create-tosec-references.js TOSEC/XML/ data/processed/tosec/ && node update-
 NOW GO BACK TO (a) and PRESS 'space' to activate new INDEX
 
 # Starting local test
+
+````
+zxinfo-neo4j (in zxapp-app)
+	docker-compose --file docker-compose-alpine.yaml run --service-ports -d zxinfo-neo4j
+
 zxinfo-app
 	NODE_ENV=development nodemon --ignore public/javascripts/config.js
 
 zxinfo-service
 	NODE_ENV=development PORT=8300 nodemon --ignore public/javascripts/config.js
+````
 
 LAUNCH ZXInfo - http://localhost:3000/#!/home
 
