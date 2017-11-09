@@ -9,8 +9,13 @@
 # Refresh (zxinfo-db)
 ````
 Download 'ZXDB-latest-generic.sql'
-Add SET character_set_client = 'utf8'; to sql file
-rm -rf mariadb
+Add this line to sql file
+SET character_set_client = 'utf8';
+
+Stop and remove ZXDB
+docker stop zxdb && docker rm zxdb && rm -rf mariadb
+
+Build:
 docker build . -t zxinfo_db:1.0
 docker run --name zxdb -p 3306:3306 -v $PWD/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=zxdb1234 -d zxinfo_db:1.0
 ````
@@ -46,11 +51,6 @@ find UpdateScreens/json/ -type f -name "*.json" -exec rm -rf {} \;
 ````
 COPY UpdateScreens/zxdb to HTMLROOT
 COPY UpdateScreens/zxscreens to HTMLROOT
-
-## Update TOSEC refs
-````
-node create-tosec-references.js TOSEC/XML/ data/processed/tosec/ && node update-tosec-references.js data/processed/tosec/
-````
 
 ## Create Title suggestions
 ````
