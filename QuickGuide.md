@@ -27,7 +27,7 @@ cd TOSECv2 && mysql -uroot -pzxdb1234 zxdb < import_tosec.sql
 
 # Start ES - (zxinfo-app)
 ````
-docker-compose --file docker-compose-alpine.yaml run --service-ports -d zxinfo-es-alpine
+docker-compose run --service-ports -d zxinfo-es-alpine
 ````
 TO clean ALL indexes
 ````
