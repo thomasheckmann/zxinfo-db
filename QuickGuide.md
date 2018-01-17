@@ -7,7 +7,7 @@
 * Test ZXInfo application
 
 # Refresh (zxinfo-db)
-To create a new and freash ZXDB instance including TOSEC info:
+To create a new and fresh ZXDB instance including TOSEC info:
 ````
 Download 'ZXDB-latest-generic.sql'
 Add this line to sql file
