@@ -7,6 +7,7 @@
 * Test ZXInfo application
 
 # Refresh (zxinfo-db)
+To create a new and freash ZXDB instance including TOSEC info:
 ````
 Download 'ZXDB-latest-generic.sql'
 Add this line to sql file
@@ -18,11 +19,6 @@ docker stop zxdb && docker rm zxdb && rm -rf mariadb
 Build:
 docker build . -t zxinfo_db:2.0
 docker run --name zxdb -p 3306:3306 -v $PWD/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=zxdb1234 -d zxinfo_db:2.0
-````
-
-# Create temporary TOSEC table
-````
-cd TOSECv2 && mysql -uroot -pzxdb1234 zxdb < import_tosec.sql
 ````
 
 # Start ES - (zxinfo-app)
