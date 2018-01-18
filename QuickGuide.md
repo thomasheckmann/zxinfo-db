@@ -1,4 +1,5 @@
 # Re-create ZXINFO database
+The following steps are required for creating a new ZXINFO backend
 
 * Download latest SQL for ZXDB
 * Import SQL into MariaDB
@@ -23,14 +24,14 @@ docker run --name zxdb -p 3306:3306 -v $PWD/mariadb:/var/lib/mysql -e MYSQL_ROOT
 
 # Start ES - (zxinfo-app)
 ````
-docker-compose run --service-ports -d zxinfo-es-alpine
+docker-compose run --service-ports -d zxinfo-es
 ````
 TO clean ALL indexes
 ````
 curl -XDELETE 'http://localhost:9200/_all'
 ````
 
-# Rebuild ES documents
+# Rebuild ES documents - (zxinfo-es)
 (a)
 ````
 # clean-up
