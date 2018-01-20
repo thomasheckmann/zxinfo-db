@@ -4,7 +4,6 @@ The following steps are required for creating a new ZXINFO backend
 * Download latest SQL for ZXDB
 * Import SQL into MariaDB
 * Create JSON documents & import into Elasticsearch
-* Create title suggestions
 * Test ZXInfo application
 
 # Refresh (zxinfo-db)
@@ -53,11 +52,6 @@ find UpdateScreens/json/ -type f -name "*.json" -exec rm -rf {} \;
 ````
 COPY UpdateScreens/zxdb to HTMLROOT
 COPY UpdateScreens/zxscreens to HTMLROOT
-
-## Create Title suggestions
-````
-(cd ZXInfoArchive/scripts/ && ./createSuggestersIndex.sh) && node create-title-suggestions.js
-````
 
 NOW GO BACK TO (a) and PRESS 'space' to activate new INDEX
 
