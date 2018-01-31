@@ -35,7 +35,7 @@ curl -XDELETE 'http://localhost:9200/_all'
 ````
 # clean-up
 find data/processed/ -type f -name "*.json" -exec rm -rf {} \;
-node create-zxinfo-documents.js -all 2> zxscreens.txt && (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
+node --max-old-space-size=2048 create-zxinfo-documents.js -all 2> zxscreens.txt && (cd ZXInfoArchive/scripts && ./createGameIndex.sh)
 ````
 NEW WINDOW
 ````
