@@ -42,4 +42,4 @@ Now point your browser to http://localhost:8080/ and login with the credential u
 # External references
 * [mariaDB on Docker Hub](https://hub.docker.com/_/mariadb/)
 * [Using mariaDB via Docker](https://mariadb.com/kb/en/mariadb/installing-and-using-mariadb-via-docker/)
-* [Database model ZXDB on WOS](https://www.worldofspectrum.org/forums/discussion/52951/database-model-zxdb/p1) (around page 23 can you find some sample SQL queries)
+* [Database model ZXDB on Github](https://github.com/zxdb/ZXDB)
