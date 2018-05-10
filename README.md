@@ -4,7 +4,7 @@ This is a quick-start guide for getting up and running with your own instance of
 ## Requirements
 You will need the following to get the container up and run:
 * Docker (Windows, Mac or Linux)
-* ZXDB generic script, must be named ZXDB_latest_generic.sql from here [ZXDB](https://www.dropbox.com/sh/bgtoq6tdwropzzr/AAAuMt4OlA_RicOBgwQLopoMa/ZXDB?dl=0)
+* ZXDB SQL script, must be named ZXDB_mysql.sql from Github [ZXDB](https://github.com/zxdb/ZXDB/archive/master.zip)
 
 # Installation
 Prepare database script: You need to add the following line as the first in the database script, in order to correct import the data.
@@ -28,7 +28,7 @@ NOTE: If you updgrade with a new release of ZXDB, remember to remove the mariadb
 
 You can test the instance using (you might have to wait for data to be loaded)
 ````
-docker exec -i zxdb mysql -uroot -p<my-secret-pwd> zxdb -e "select * from controltypes;"
+docker exec -i zxdb mysql -uroot -p<my-secret-pwd> zxdb -e "select * from hosts;"
 ````
 Where *my-secret-pw* is the password used above.
 
