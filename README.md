@@ -18,19 +18,23 @@ docker build . -t zxinfo_db:1.0
 ````
 
 Start the mariaDB server instance
-````
-docker run --name zxdb -p 3306:3306 -v $PWD/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d zxinfo_db:1.0
-````
-Where *my-secret-pw* is the password to be set for the MySQL root user
+
+<pre>
+docker run --name zxdb -p 3306:3306 -v $PWD/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=<b>my-secret-pwd</b> -d zxinfo_db:1.0
+</pre>
+
+Where **my-secret-pwd** is the password to be set for the MySQL root user
 A docker container with the name *zxdb* should now be running on localhost port 3306.
 
 NOTE: If you updgrade with a new release of ZXDB, remember to remove the mariadb folder, as the script will only be run when MariaDB is initialized.
 
 You can test the instance using (you might have to wait for data to be loaded)
-````
-docker exec -i zxdb mysql -uroot -p<my-secret-pwd> zxdb -e "select * from hosts;"
-````
-Where *my-secret-pw* is the password used above.
+
+<pre>
+docker exec -i zxdb mysql -uroot -p<b>my-secret-pwd</b> zxdb -e "select * from hosts;"
+</pre>
+
+Where **my-secret-pwd** is the password used above.
 
 # Running myPhpAdmin
 If you want to run myPhpAdmin with this Docker container, start the myPhpAdmin with:
