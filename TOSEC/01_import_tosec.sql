@@ -13,6 +13,6 @@ CREATE TABLE tmp_tosec (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- IMPORT tab delimited file
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/TOSEC_08_11_2017.txt' INTO TABLE tmp_tosec
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/TOSEC_v1_4.txt' INTO TABLE tmp_tosec
        CHARACTER SET UTF8
        FIELDS TERMINATED BY '\t' lines terminated by '\n';
