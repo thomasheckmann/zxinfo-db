@@ -4,19 +4,22 @@ This is a quick-start guide for getting up and running with your own instance of
 ## Requirements
 You will need the following to get the container up and run:
 * Docker (Windows, Mac or Linux)
-* ZXDB SQL script, must be named ZXDB_mysql.sql from Github [ZXDB](https://github.com/zxdb/ZXDB/archive/master.zip)
+* ZXDB SQL script from Github [ZXDB](https://github.com/zxdb/ZXDB/archive/master.zip)
 
 # Installation
-Prepare database script: You need to add the following line as the first in the database script, in order to correct import the data.
-````
-SET character_set_client = 'utf8';
-````
+Download ZXDB\_mysql.sql at [ZXDB](https://github.com/zxdb/ZXDB/) - and note the version of the file, let us assume **1.0.81** for this guide.
 
-Build the Docker image with
-````
-docker build . -t zxinfo_db:1.0 
-````
+Save the file as ZXDB\_mysql\_&lt;version&gt;.sql - for example **ZXDB_mysql_1.0.81.sql**
 
+Build the Docker image with supplied script: **buildZXDB.sh &lt;version&gt;**
+````
+./buildZXDB.sh 1.0.81
+````
+The script will build and run a mariaDB instance with ZXDB named zxdb\_&lt;version&gt; - in this case **zxdb_1.0.81**
+
+Check docker logs - to ensure it has been started and populated correctly.
+
+# Manual docker start
 Start the mariaDB server instance
 
 <pre>

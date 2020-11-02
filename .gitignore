@@ -1,3 +1,4 @@
-/mariadb/
+/mariadb*/
 .DS_Store
 ZXDB_*.sql
+02_zxdb_version.sql
