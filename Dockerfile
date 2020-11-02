@@ -16,6 +16,6 @@ COPY ZXDB_mysql.sql /docker-entrypoint-initdb.d/00_zxdb_init.sql
 COPY ZXDB_help_search.sql /docker-entrypoint-initdb.d/01_zxdb_help_search.sql
 
 COPY TOSEC/01_import_tosec.sql /docker-entrypoint-initdb.d/20_import_tosec.sql
-COPY TOSEC/TOSEC_08_11_2017.txt /docker-entrypoint-initdb.d/TOSEC_08_11_2017.txt
+COPY TOSEC/TOSEC_v1_4.txt /docker-entrypoint-initdb.d/TOSEC_v1_4.txt
 
 
