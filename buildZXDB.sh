@@ -8,7 +8,7 @@
 if [ $# -eq 0 ]
   then
     echo "No arguments supplied"
-    echo "usage: getZXDB.sh zxdb_version - check github/ZXDB for available versions"
+    echo "usage: buildZXDB.sh zxdb_version - check github/ZXDB for available versions"
 fi
 
 ZXDBv=$1
