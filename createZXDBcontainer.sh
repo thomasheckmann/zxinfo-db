@@ -45,6 +45,10 @@ docker rm zxdb_$ZXDBv
 docker run --name zxdb_$ZXDBv -p 3306:3306 -v $PWD/mariadb_$ZXDBv:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=zxdb1234 -d zxinfo_db:$ZXDBv
 
 echo "Starting phpadmin...."
+
+echo "...removing existing if already running..."
+docker rm -f myadmin
+
 echo "docker run --name myadmin -d --link zxdb_$ZXDBv:db -p 8080:80 phpmyadmin/phpmyadmin"
 docker run --name myadmin -d --link zxdb_$ZXDBv:db -p 8080:80 phpmyadmin/phpmyadmin
 echo "http://localhost:8080/"
