@@ -17,5 +17,5 @@ COPY ZXDB_help_search.sql /docker-entrypoint-initdb.d/01_zxdb_help_search.sql
 COPY ZXInfoExt/02_zxdb_version.sql /docker-entrypoint-initdb.d/
 
 COPY ZXInfoExt/TOSEC/01_import_tosec.sql /docker-entrypoint-initdb.d/20_import_tosec.sql
-COPY ZXInfoExt/TOSEC/tosec_2020.txt /docker-entrypoint-initdb.d/TOSEC_v1_5.txt
+COPY ZXInfoExt/TOSEC/tosec_2020.txt /docker-entrypoint-initdb.d/TOSEC_import.txt
 
